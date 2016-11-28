@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  # next two items bootstrap Python 2 on xenial
+  # http://docs.ansible.com/ansible/raw_module.html
+  gather_facts: no
+  pre_tasks:
+    - name: bootstrap Python 2
+      raw: sudo apt-get update && sudo apt-get -y install python-simplejson
+    - name: gather facts
+      setup:
+  roles:
+    - { role: ansible-role-ros, ros_packages: ['ros-base', 'urdfdom-py'] }
