@@ -1,12 +1,21 @@
 ---
 language: python
 python: "2.7"
-
+dist: trusty
 sudo: false
 
-dist:
-  - trusty
-  - xenial
+addons:
+  apt:
+    packages:
+    - python-pip
+
+install:
+  - pip install ansible
+  - ansible --version
+  - printf '[defaults]\nroles_path=../' >ansible.cfg
 
 script:
-  - echo It worked on $(lsb_release -sc)!
+  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

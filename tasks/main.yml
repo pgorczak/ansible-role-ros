@@ -1,0 +1,15 @@
+- name: accept software from packages.ros.org
+  apt_repository:
+    repo: 'deb http://packages.ros.org/ros/ubuntu {{ ansible_lsb.codename }} main'
+    filename: 'ros-latest'
+- name: set up ros keys
+  apt_key:
+    keyserver: ha.pool.sks-keyservers.net
+    id: '0xB01FA116'
+- name: update package sources
+  apt:
+    update_cache: yes
+- name: install ros packages
+  apt:
+    name: ros-{{ ros_versions[ansible_lsb.codename] }}-{{ item }}
+  with_items: '{{ ros_packages }}'
