@@ -1,0 +1,19 @@
+galaxy_info:
+  author: pgorczak
+  description: An ansible role to deploy ROS
+  license: GPLv3
+  min_ansible_version: 2.2
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+
+  galaxy_tags:
+  - system
+  - development
+  - ubuntu
+  - ros
+
+dependencies: []
