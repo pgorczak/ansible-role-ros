@@ -2,7 +2,7 @@
 language: python
 python: "2.7"
 dist: trusty
-sudo: false
+sudo: required
 
 addons:
   apt:
@@ -16,6 +16,9 @@ install:
 
 script:
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+  - ansible-playbook tests/test.yml -i tests/inventory --connection=local
+  - source $(find /opt/ros -mindepth 2 -maxdepth 2 -name setup.bash)
+  - which roscore
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
