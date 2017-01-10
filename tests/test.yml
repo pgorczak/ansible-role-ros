@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
   remote_user: root
+  become: yes
+  become_method: sudo
   roles:
-    - ansible-role-ros
+    - { role: ansible-role-ros, ros_packages: ['ros-base'] }
