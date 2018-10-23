@@ -1,5 +1,7 @@
 # Ansible Role: ROS
 
+[![Build Status](https://travis-ci.org/pgorczak/ansible-role-ros.svg?branch=master)](https://travis-ci.org/pgorczak/ansible-role-ros)
+
 Deploy ROS to an Ubuntu machine.
 
 ## Requirements
