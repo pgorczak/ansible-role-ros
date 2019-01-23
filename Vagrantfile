@@ -9,6 +9,11 @@ Vagrant.configure("2") do |config|
     config.vm.hostname = "ros1604"
   end
 
+  config.vm.define "ros1804" do |config|
+    config.vm.box = "ubuntu/bionic64"
+    config.vm.hostname = "ros1804"
+  end
+
   config.vm.provision "ansible" do |ansible|
     ansible.galaxy_roles_path = "../"
     ansible.playbook = "example.yml"
