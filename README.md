@@ -28,3 +28,9 @@ setting up ROS like
 roles:
 - { role: ansible-role-ros, ros_packages: ['ros-base', 'urdfdom-py'] }
 ```
+
+
+## Use in production
+
+* [Install from Ansible Galaxy](https://galaxy.ansible.com/pgorczak/ros).
+* Use the role like in the example playbook, but instead of *ansible-role-ros*, use **pgorczak.ros**.
