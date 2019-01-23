@@ -5,7 +5,7 @@
 Deploy ROS to an Ubuntu machine.
 
 ## Requirements
-Note that Python 2 is not included in Ubuntu Xenial. You can bootstrap it with
+Note that the simplejson package must be available on remote machines
 
     pip install python-simplejson
 
