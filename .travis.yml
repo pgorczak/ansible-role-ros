@@ -17,6 +17,10 @@ addons:
     - python-pip
 
 install:
+  # TODO this becomes unnecessary on trusty/indigo EOL
+  # workaround from https://github.com/travis-ci/travis-ci/issues/9361
+  # to upgrade to dpkg >= 1.17.5ubuntu5.8, which fixes https://bugs.launchpad.net/ubuntu/+source/dpkg/+bug/1730627
+  - sudo apt-get install -y dpkg
   - pip install ansible
   - ansible --version
   - printf '[defaults]\nroles_path=../' >ansible.cfg
