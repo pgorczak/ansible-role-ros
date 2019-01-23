@@ -9,5 +9,4 @@
     update_cache: yes
 - name: install ros packages
   apt:
-    name: ros-{{ ros_versions[ansible_lsb.codename] }}-{{ item }}
-  with_items: '{{ ros_packages }}'
+    pkg: "{{ ros_packages | map('regex_replace', '(.*)', 'ros-'+ros_versions[ansible_lsb.codename]+'-\\1') | list }}"
