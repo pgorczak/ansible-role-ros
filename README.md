@@ -5,10 +5,8 @@
 Deploy ROS to an Ubuntu machine.
 
 ## Requirements
-Note that the simplejson package must be available on remote machines
 
-    pip install python-simplejson
-
+The role configures package sources and installs packages. You need to run it with root privileges.
 
 ## Role Variables
 
@@ -33,4 +31,7 @@ roles:
 ## Use in production
 
 * [Install from Ansible Galaxy](https://galaxy.ansible.com/pgorczak/ros).
+* Remember that managed hosts need *python-simplejson* for playbook to work.
 * Use the role like in the example playbook, but instead of *ansible-role-ros*, use **pgorczak.ros**.
+* Make sure you have key-based access to a sudo user on the managed hosts.
+* Tip: run *ansible-playbook* with `-u USERNAME` to specify the user and `-K` to allow it to ask for the sudo password.
