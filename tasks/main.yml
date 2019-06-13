@@ -1,7 +1,7 @@
 - name: set up ros keys
   apt_key:
     keyserver: ha.pool.sks-keyservers.net
-    id: '0xB01FA116'
+    id: '0xab17c654'
 - name: accept software from packages.ros.org
   apt_repository:
     repo: 'deb http://packages.ros.org/ros/ubuntu {{ ansible_lsb.codename }} main'
