@@ -15,6 +15,11 @@ The role configures package sources and installs packages. You need to run it wi
 
 
 ## Test Locally
+Copy the ansible-role-ros to the user roles, otherwise the role won't be visible
+```bash
+cp ./ /home/$USER/.ansible/roles/ansible-role-ros -r
+```
+
 To setup a VM for each supported Ubuntu release with `ros-base`, run
 
     vagrant up
